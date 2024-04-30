@@ -11,6 +11,7 @@ const { v4: uuidv4 } = require('uuid'); // Generate unique IDs
 // Middleware setup
 app.use(express.static('public')); // Serve static files from the 'public' directory
 app.use(express.json()); // Parse JSON bodies
+app.use(express.urlencoded({ extended: true }));
 
 // API Routes
 
