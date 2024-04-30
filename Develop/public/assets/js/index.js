@@ -3,8 +3,9 @@ let noteTitle;
 let noteText;
 let saveNoteBtn;
 let newNoteBtn;
-let noteList;
+let clearBtn; // Added clearBtn variable declaration
 
+// initialize noteList as an empty array
 if (window.location.pathname === '/notes') {
   noteForm = document.querySelector('.note-form');
   noteTitle = document.querySelector('.note-title');
@@ -28,6 +29,7 @@ const hide = (elem) => {
 // activeNote is used to keep track of the note in the textarea
 let activeNote = {};
 
+// function to get note from the server
 const getNotes = () =>
   fetch('/api/notes', {
     method: 'GET',
@@ -36,6 +38,7 @@ const getNotes = () =>
     }
   });
 
+// function to save note to the server
 const saveNote = (note) =>
   fetch('/api/notes', {
     method: 'POST',
@@ -45,6 +48,7 @@ const saveNote = (note) =>
     body: JSON.stringify(note)
   });
 
+  // function to delete note from the server
 const deleteNote = (id) =>
   fetch(`/api/notes/${id}`, {
     method: 'DELETE',
@@ -53,9 +57,10 @@ const deleteNote = (id) =>
     }
   });
 
+// If there is an activeNote, display it, otherwise render empty inputs
 const renderActiveNote = () => {
   hide(saveNoteBtn);
-  hide(clearBtn);
+  hide(clearBtn); // Hide clearBtn when rendering active note
 
   if (activeNote.id) {
     show(newNoteBtn);
@@ -72,6 +77,7 @@ const renderActiveNote = () => {
   }
 };
 
+// function to handle note save
 const handleNoteSave = () => {
   const newNote = {
     title: noteTitle.value,
@@ -83,7 +89,7 @@ const handleNoteSave = () => {
   });
 };
 
-// Delete the clicked note
+// Function to delete the clicked note
 const handleNoteDelete = (e) => {
   // Prevents the click listener for the list from being called when the button inside of it is clicked
   e.stopPropagation();
@@ -184,6 +190,7 @@ const renderNoteList = async (notes) => {
 // Gets notes from the db and renders them to the sidebar
 const getAndRenderNotes = () => getNotes().then(renderNoteList);
 
+// event listeners for the form input and buttons
 if (window.location.pathname === '/notes') {
   saveNoteBtn.addEventListener('click', handleNoteSave);
   newNoteBtn.addEventListener('click', handleNewNoteView);
