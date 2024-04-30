@@ -39,7 +39,6 @@ Live URL of Deployed Application:
 ScreenShots of Deployed App:
 
 
-
 Collaboration Guidelines: 
 
 1. Clone starter code
