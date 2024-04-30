@@ -37,7 +37,9 @@ Live URL of Deployed Application:
 
 
 ScreenShots of Deployed App:
-
+![alt text](<Develop/public/assets/ExpressNoteTaker Notes Homepage.png>)
+![alt text](<Develop/public/assets/ExpressNoteTaker Notes Page 1.png>)
+![alt text](<Develop/public/assets/ExpressNoteTaker Notes Save and Clear Form.png>)
 
 Collaboration Guidelines: 
 
