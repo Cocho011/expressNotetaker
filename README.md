@@ -35,6 +35,7 @@ Challenges:
 
 Live URL of Deployed Application:
 
+https://thawing-ravine-95060-39071126abbf.herokuapp.com/notes
 
 ScreenShots of Deployed App:
 ![alt text](<Develop/public/assets/ExpressNoteTaker Notes Homepage.png>)
